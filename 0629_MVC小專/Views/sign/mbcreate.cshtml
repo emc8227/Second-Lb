@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "mbcreate";
+}
+
+<div class="container">
+
+    <form method="post" class="form-signin container " role="form" data-ajax="false">
+        <h2 class="form-signin-heading ">新會員</h2>
+        <div>
+            <label for="useremail" class="sr-only ">Email address</label>
+            <input type="email" name="useremail"  id="useremail" value="@ViewBag.newuseremail" class="form-control " placeholder="Email address" required autofocus>
+        </div>
+        <div>
+            <label for="userpassword" class="sr-only ">Password</label>
+            <input type="text" name="userpassword" id="userpassword" value="@ViewBag.newuserpassword" class="form-control " placeholder="請輸入數字">
+        </div>
+        <div >
+            <button class="btn btn-lg btn-primary btn-block " type="submit" id="btnSign">註冊</button>
+        </div>
+        <label >@ViewBag.erro</label>
+    </form>
+
+
+
+
+</div>

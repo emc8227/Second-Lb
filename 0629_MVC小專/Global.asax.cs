@@ -14,5 +14,9 @@ namespace _0629_MVC小專
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
         }
+
+        protected void Session_Start() {
+            Session["userId"] = "guest";
+        }
     }
 }

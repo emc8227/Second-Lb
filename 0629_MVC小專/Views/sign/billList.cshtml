@@ -1,0 +1,74 @@
+﻿
+@{
+    ViewBag.Title = "billList";
+}
+@using _0629_MVC小專.Models
+@model List<SignBill>
+
+<body>
+
+    <style>
+        a {
+            color:darkblue;
+        }
+    </style>
+
+   
+    <table class="table table-striped" align="left">
+        <caption ><h2>簽單列表</h2></caption>
+        <caption><a type="button" class="btn btn-default" href="~/sign/create">
+             新增一筆
+        </a></caption>
+        <thead>
+            <tr>
+                <th>編號</th>
+                <th>公司寶號</th>
+                <th>日期</th>
+                <th>客戶</th>
+                <th>司機</th>
+                <th>品名</th>
+                <th>規格</th>
+                <th>時數</th>
+                <th>加班</th>
+                <th>板運</th>
+                <th>金額</th>
+                <th>流水號</th>
+            </tr>
+        </thead>
+
+        <tbody>
+           @{ foreach (SignBill row in Model) {
+
+                <tr>
+                    <td>@row.billID</td>
+                    <td>@row.company</td>
+                    <td>@row.adate</td>
+                    <td>@row.customer</td>
+                    <td>@row.driver</td>
+                    <td>@row.product</td>
+                    <td>@row.standards</td>
+                    <td>@row.timehour</td>
+                    <td>@row.overtime</td>
+                    <td>@row.freight</td>
+                    <td>@row.expenses</td>
+                    <td>@row.number</td>
+
+                    <td>
+                        <a type="button" class="btn btn-xs btn-info" href="~/sign/update/@row.billID">
+                            Update
+                        </a>
+                        <a type="button" class="btn btn-xs btn-danger" href="~/sign/delete/@row.billID">
+                            Delete
+                        </a>
+                        
+                        
+                    </td>
+                </tr>
+                <br />
+                   }
+               }
+        </tbody>
+    </table>
+</body>
+
+

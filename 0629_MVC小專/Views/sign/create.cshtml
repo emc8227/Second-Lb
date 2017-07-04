@@ -1,0 +1,107 @@
+﻿
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Bill</title>
+    <link rel="stylesheet" href="~/css/bootstrap.min.css">
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h2>Create Bill</h2>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <form method="post" action="" class="form-horizontal" role="form">
+                    @*<div class="form-group">
+                <label for="company" class="col-md-2 control-label">編號:</label>
+                <div class="col-md-10">
+                    <input type="text" class="form-control" name="billID" id="billID" value="@ViewBag.billID">
+                </div>
+            </div>*@
+                    <div class="form-group">
+                        <input type="hidden" name="bill_userID" value="@Session["userId"]" >
+                        <label for="company" class="col-md-2 control-label">公司寶號:</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" name="company" id="company" value="@ViewBag.company">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="adate" class="col-md-2 control-label">日期:</label>
+                        <div class="col-md-10">
+                            <input type="date" class="form-control" name="adate" id="adate" value="@ViewBag.adate">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="product" class="col-md-2 control-label">品名:</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" name="product" id="product" value="@ViewBag.product">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="standards" class="col-md-2 control-label">規格:</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" name="standards" id="standards" value="@ViewBag.standards">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="timehour" class="col-md-2 control-label">時數:</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" name="timehour" id="timehour" value="@ViewBag.timehour">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="overtime" class="col-md-2 control-label">加班:</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" name="overtime" id="overtime" value="@ViewBag.overtime">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="freight" class="col-md-2 control-label">板運:</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" name="freight" id="freight" value="@ViewBag.freight">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="expenses" class="col-md-2 control-label">金額:</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" name="expenses" id="expenses" value="@ViewBag.expenses">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="customer" class="col-md-2 control-label">客戶:</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" name="customer" id="customer" value="@ViewBag.customer">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="driver" class="col-md-2 control-label">司機:</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" name="driver" id="driver" value="@ViewBag.driver">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="number" class="col-md-2 control-label">簽單編號:</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" name="number" id="number" value="@ViewBag.number">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-default">新增</button>
+                            <a type="button" class="btn btn-default" href="~/sign/billList">取消</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    
+
+</body>
+</html>

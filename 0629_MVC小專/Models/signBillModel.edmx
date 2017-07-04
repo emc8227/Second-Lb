@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Tim001Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Member">
+          <Key>
+            <PropertyRef Name="userID" />
+          </Key>
+          <Property Name="userID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="useremail" Type="varchar" MaxLength="20" />
+          <Property Name="userpassword" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="SignBill">
+          <Key>
+            <PropertyRef Name="billID" />
+          </Key>
+          <Property Name="billID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="company" Type="varchar" MaxLength="20" />
+          <Property Name="adate" Type="varchar" MaxLength="20" />
+          <Property Name="product" Type="varchar" MaxLength="20" />
+          <Property Name="standards" Type="varchar" MaxLength="20" />
+          <Property Name="timehour" Type="int" />
+          <Property Name="overtime" Type="int" />
+          <Property Name="freight" Type="int" />
+          <Property Name="expenses" Type="int" />
+          <Property Name="customer" Type="varchar" MaxLength="20" />
+          <Property Name="driver" Type="varchar" MaxLength="20" />
+          <Property Name="number" Type="int" />
+          <Property Name="bill_userID" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="Tim001ModelStoreContainer">
+          <EntitySet Name="Member" EntityType="Self.Member" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SignBill" EntityType="Self.SignBill" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Tim001Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Member">
+          <Key>
+            <PropertyRef Name="userID" />
+          </Key>
+          <Property Name="userID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="useremail" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="userpassword" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="SignBill">
+          <Key>
+            <PropertyRef Name="billID" />
+          </Key>
+          <Property Name="billID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="company" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="adate" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="product" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="standards" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="timehour" Type="Int32" />
+          <Property Name="overtime" Type="Int32" />
+          <Property Name="freight" Type="Int32" />
+          <Property Name="expenses" Type="Int32" />
+          <Property Name="customer" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="driver" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="number" Type="Int32" />
+          <Property Name="bill_userID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="Tim001Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Members" EntityType="Self.Member" />
+          <EntitySet Name="SignBills" EntityType="Self.SignBill" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Tim001ModelStoreContainer" CdmEntityContainer="Tim001Entities">
+          <EntitySetMapping Name="Members">
+            <EntityTypeMapping TypeName="Tim001Model.Member">
+              <MappingFragment StoreEntitySet="Member">
+                <ScalarProperty Name="userID" ColumnName="userID" />
+                <ScalarProperty Name="useremail" ColumnName="useremail" />
+                <ScalarProperty Name="userpassword" ColumnName="userpassword" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SignBills">
+            <EntityTypeMapping TypeName="Tim001Model.SignBill">
+              <MappingFragment StoreEntitySet="SignBill">
+                <ScalarProperty Name="billID" ColumnName="billID" />
+                <ScalarProperty Name="company" ColumnName="company" />
+                <ScalarProperty Name="adate" ColumnName="adate" />
+                <ScalarProperty Name="product" ColumnName="product" />
+                <ScalarProperty Name="standards" ColumnName="standards" />
+                <ScalarProperty Name="timehour" ColumnName="timehour" />
+                <ScalarProperty Name="overtime" ColumnName="overtime" />
+                <ScalarProperty Name="freight" ColumnName="freight" />
+                <ScalarProperty Name="expenses" ColumnName="expenses" />
+                <ScalarProperty Name="customer" ColumnName="customer" />
+                <ScalarProperty Name="driver" ColumnName="driver" />
+                <ScalarProperty Name="number" ColumnName="number" />
+                <ScalarProperty Name="bill_userID" ColumnName="bill_userID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="無" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
